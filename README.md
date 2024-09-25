@@ -1,3 +1,27 @@
+# mercari-llm-hack-front
+## ブランチの切り方
+
+### ブランチの切り方
+feature/機能名 で切ります。 
+
+mainからfeature/機能名を切って、機能が完成したらmainにマージします。
+
+### コミットメッセージの書き方
+[機能名] コミットメッセージ
+
+### コミットメッセージの例
+[機能名] ボタンのデザイン変更
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
