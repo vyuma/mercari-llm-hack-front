@@ -1,6 +1,11 @@
 'use client';
 import React from 'react';
-import ExchangeRateChart from '@/app/components/chart'
+import dynamic from 'next/dynamic';
+
+const ExchangeRateChart = dynamic(() => import('../components/chart'), {
+  ssr: false,
+});
+
 
 export default function Page() {
   return (
