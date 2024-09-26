@@ -5,6 +5,7 @@ import { Category } from "../components/CategoryButtons/schema";
 import { Item } from "../components/ItemButtons/schema";
 import  TagSelector from "./tag"
 import {useEffect, useState} from 'react'
+import Image from "next/image";
 
 export default function Page() {
   const [tags, setTags] = useState<string[]>([]);
@@ -83,6 +84,7 @@ export default function Page() {
       <Header title={"ランキング"} />
       <div className="m-3">
         <ItemButtons items={searchItem} />
+        <Image src="/images/mercari.png" width={500} height={300} alt={'出品画面'} className="" />
       </div>
     </div>
   );

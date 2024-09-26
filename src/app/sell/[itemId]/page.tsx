@@ -46,7 +46,9 @@ export default function TitleDetail({
             売れているところ
           </div>
           <Image src="/images/area.png" width={475} height={430} alt="area" />
+          
         </div>
+        <Image src="/images/mercari.png" width={400} height={200} alt={'出品画面'} className="" />
       </div>
     </div>
   );
