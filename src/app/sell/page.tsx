@@ -1,7 +1,6 @@
 'use client'
 import Header from "../components/Header";
 import ItemButtons from "../components/ItemButtons";
-import CategoryButtons from "../components/CategoryButtons";
 import { Category } from "../components/CategoryButtons/schema";
 import { Item } from "../components/ItemButtons/schema";
 import  TagSelector from "./tag"
