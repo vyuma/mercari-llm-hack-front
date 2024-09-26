@@ -13,7 +13,10 @@ const TagSelector = ({tags,setTags}:TagSelectorProps) => {
 
   // State to store selected tags and input value
   const [inputValue, setInputValue] = useState('');
-  const handleTagChange = (event: any, newValue: string[]) => {
+  const handleTagChange = (
+    event: React.SyntheticEvent<Element, Event>,
+    newValue: string[],
+  ) => {
     setTags(newValue);
   };
   return (
@@ -34,6 +37,7 @@ const TagSelector = ({tags,setTags}:TagSelectorProps) => {
               variant="outlined"
               label={option}
               {...getTagProps({ index })}
+              key={option}
             />
           ))
         }
