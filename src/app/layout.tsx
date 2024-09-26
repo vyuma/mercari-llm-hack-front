@@ -16,31 +16,37 @@ export default function RootLayout({
     {
       name: "item",
       icon: "/images/home.svg",
+      icon_filled: "/images/home_filled.svg",
       buttonName: "ホーム",
     },
     {
-      name: "",
+      name: "search",
       icon: "/images/search.svg",
+      icon_filled: "/images/search_filled.svg",
       buttonName: "さがす",
     },
     {
       name: "sell",
       icon: "/images/camera.svg",
+      icon_filled: "/images/camera_filled.svg",
       buttonName: "出品",
     },
     {
-      name: "",
+      name: "pay",
       icon: "/images/yen.svg",
+      icon_filled: "/images/yen_filled.svg",
       buttonName: "支払い",
     },
     {
-      name: "",
+      name: "works",
       icon: "/images/bag.svg",
+      icon_filled: "/images/bag_filled.svg",
       buttonName: "はたらく",
     },
     {
-      name: "",
+      name: "mypage",
       icon: "/images/person.svg",
+      icon_filled: "/images/person_filled.svg",
       buttonName: "マイページ",
     },
   ];
