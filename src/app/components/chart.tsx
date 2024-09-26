@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   AreaChart,
   XAxis,
@@ -9,13 +9,15 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
+import {useRef} from "react"
+import { useEffect } from "react";
+
 // Import necessary modules and types
 
+import fetchFX from "@/app/API/FX";
+import {ExchangeRateData} from "@/app/API/FX";
 // Define the data type
-interface ExchangeRateData {
-  date: string;
-  rate: number;
-}
+
 
 // Mock data for USD/JPY exchange rates
 const mockData: ExchangeRateData[] = [
@@ -27,6 +29,8 @@ const mockData: ExchangeRateData[] = [
   { date: "2024-09-25", rate: 148.45 },
   { date: "2024-09-26", rate: 148.55 },
 ];
+
+
 
 const FormatData = (data: ExchangeRateData[]) => {
   const formattedData = data.map((item) => {
@@ -43,10 +47,19 @@ const FormatData = (data: ExchangeRateData[]) => {
   return formattedData;
 };
 
-const FormatMockData = FormatData(mockData);
-
 // Create the ExchangeRateChart component
 const ExchangeRateChart: React.FC = () => {
+  
+  const [data,setData] = useState<ExchangeRateData[]>(mockData)
+
+  useEffect(()=> {
+    const FXAPI =  async () => {
+      const FXRate: ExchangeRateData[] = await fetchFX()
+      setData(FXRate)
+    }
+  })
+
+
   return (
     <div style={{ width: "100%", height: 400 }}>
       <h2>USD/JPY Exchange Rate</h2>
@@ -54,7 +67,7 @@ const ExchangeRateChart: React.FC = () => {
         <AreaChart
           width={730}
           height={250}
-          data={FormatMockData}
+          data={}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
