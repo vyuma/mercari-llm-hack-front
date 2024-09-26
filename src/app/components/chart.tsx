@@ -9,7 +9,7 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
-import {useRef} from "react"
+// import {useRef} from "react"
 import { useEffect } from "react";
 
 // Import necessary modules and types
@@ -17,20 +17,6 @@ import { useEffect } from "react";
 import fetchFX from "@/app/API/FX";
 import {ExchangeRateData} from "@/app/API/FX";
 // Define the data type
-
-
-// Mock data for USD/JPY exchange rates
-const mockData: ExchangeRateData[] = [
-  { date: "2024-09-20", rate: 147.65 },
-  { date: "2024-09-21", rate: 147.9 },
-  { date: "2024-09-22", rate: 148.15 },
-  { date: "2024-09-23", rate: 148.05 },
-  { date: "2024-09-24", rate: 148.3 },
-  { date: "2024-09-25", rate: 148.45 },
-  { date: "2024-09-26", rate: 148.55 },
-];
-
-
 
 const FormatData = (data: ExchangeRateData[]) => {
   const formattedData = data.map((item) => {
@@ -49,16 +35,24 @@ const FormatData = (data: ExchangeRateData[]) => {
 
 // Create the ExchangeRateChart component
 const ExchangeRateChart: React.FC = () => {
-  
-  const [data,setData] = useState<ExchangeRateData[]>(mockData)
+  const [exchangeData, setExchangeData] = useState<ExchangeRateData[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
-  useEffect(()=> {
-    const FXAPI =  async () => {
-      const FXRate: ExchangeRateData[] = await fetchFX()
-      setData(FXRate)
-    }
-  })
+    useEffect(() => {
+        // Fetch the data when the component mounts
+        const fetchData = async () => {
+            try {
+                const data = await fetchFX();
+                setExchangeData(data);
+            } catch (err) {
+                setError('Failed to fetch data');
+                console.error(err);
+            }
+        };
+        fetchData();
+    }, []); 
 
+  const FormatMockData = FormatData(exchangeData);
 
   return (
     <div style={{ width: "100%", height: 400 }}>
@@ -67,7 +61,7 @@ const ExchangeRateChart: React.FC = () => {
         <AreaChart
           width={730}
           height={250}
-          data={}
+          data={FormatMockData}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
