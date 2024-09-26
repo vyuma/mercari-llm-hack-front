@@ -33,10 +33,10 @@ export default function TitleDetail({
           </div>
         <div className="flex flex-row items-center justify-between border-b-2 border-gray-100">
           <div className='text-left font-bold'>カテゴリー</div>
-          <div className="flex flex-col">
-            <div>ゲーム・おもちゃ・グッズ></div>
-            <div>フィギュア></div>
-            <div>コミック・アニメ></div>
+          <div className="flex flex-col p-4">
+            <div>ゲーム・おもちゃ・グッズ&gt;</div>
+            <div>フィギュア&gt;</div>
+            <div>コミック・アニメ&gt;</div>
             <div>ワンピース</div>
           </div>
         </div>
