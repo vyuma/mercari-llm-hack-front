@@ -10,16 +10,16 @@ import Image from "next/image";
 export default function Page() {
   const [tags, setTags] = useState<string[]>([]);
   
-  const categories: Category[] = [
-    {
-      id: "1",
-      name: "アニメ",
-    },
-    {
-      id: "2",
-      name: "フィギュア",
-    },
-  ];
+  // const categories: Category[] = [
+  //   {
+  //     id: "1",
+  //     name: "アニメ",
+  //   },
+  //   {
+  //     id: "2",
+  //     name: "フィギュア",
+  //   },
+  // ];
 
   const items: Item[] = [
       {
