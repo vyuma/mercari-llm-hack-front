@@ -1,5 +1,4 @@
 "use client";
-import { clear } from "console";
 import dynamic from "next/dynamic";
 
 const ExchangeRateChart = dynamic(() => import("../../components/chart"), {
