@@ -6,6 +6,7 @@ const ExchangeRateChart = dynamic(() => import("../../components/chart"), {
 });
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function TitleDetail({}: //   params: { itemId },
@@ -71,7 +72,7 @@ export default function TitleDetail({}: //   params: { itemId },
           alt="item4"
         ></Image>
       </div>
-      <div className="flex flex-row items-start justify-between fixed bottom-20 right-0">
+      <div className="flex flex-row items-start justify-between fixed bottom-20 mb-12 right-0">
         <div
           className={`relative bottom-4 left-2 drop-shadow-lg p-4 bg-contain bg-no-repeat bg-[url('/images/fukidashi.png')] transition-opacity duration-1000 ${
             visibleComment ? "opacity-100" : "opacity-0"
@@ -90,6 +91,14 @@ export default function TitleDetail({}: //   params: { itemId },
           alt="chara"
           onClick={handleClick}
         ></Image>
+      </div>
+      <div className="bg-white p-2 footer-buttons w-full flex flex-row items-center justify-around fixed bottom-16 mb-2">
+        <div className="rounded-md border-red-500 border-2 text-red-500 box-border px-6 py-2">
+          定額払いで購入
+        </div>
+        <div className="rounded-md bg-red-500 text-white box-border px-8 py-2">
+          <Link href="/">購入手続きへ</Link>
+        </div>
       </div>
     </div>
   );
