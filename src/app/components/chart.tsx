@@ -9,14 +9,9 @@ import {
   Area,
   ResponsiveContainer,
 } from "recharts";
-// import {useRef} from "react"
-import { useEffect } from "react";
 
 // Import necessary modules and types
-
-import fetchFX from "@/app/API/FX";
 import {ExchangeRateData} from "@/app/API/FX";
-import { buffer } from "stream/consumers";
 // Define the data type
 
 type ExchangeBuyerAndSellerDataType = {
@@ -167,10 +162,10 @@ const ExchangeRateChart: React.FC = () => {
   const FormatMockData = FormatDataBuyerAndSeller(exchangeData);
 
   // nameを変える
-  const CustomTooltipFormatter = (value, name) => {
-    const nameMapping = {
-      sellerCountry: '日本',
-      buyerCountry: 'アメリカ',
+  const CustomTooltipFormatter = (value: string, name: string) => {
+    const nameMapping: {[key: string]: string} = {
+      "sellerCountry": '日本',
+      "buyerCountry": 'アメリカ',
     };
     
     return [value, nameMapping[name] || name];
@@ -179,7 +174,6 @@ const ExchangeRateChart: React.FC = () => {
 
   return (
     <div style={{ width: "100%", height: 400 }}>
-      <h2>相場</h2>
       <ResponsiveContainer>
         <AreaChart
           width={730}
