@@ -12,7 +12,7 @@ export default function ItemButtons({ items }: { items: Item[] }) {
           href={"sell/" + item.id}
         >
           <div className="text-base">
-            {index}. {item.name}
+            {index + 1}. {item.name}
           </div>
           <Image
             src="/images/dots_vertical.png"
