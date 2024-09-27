@@ -18,7 +18,7 @@ export default function TitleDetail({
   };
 
   return (
-    <div>
+    <div className="mb-12">
       <Image
         src="/images/figure.webp"
         width={430}

@@ -79,7 +79,7 @@ export default function Page() {
 
 
   return (
-    <div className="p-1.5">
+    <div className="p-1.5 mb-12">
       <TagSelector tags={tags} setTags={setTags}/>
       <Header title={"ランキング"} />
       <div className="m-3">
