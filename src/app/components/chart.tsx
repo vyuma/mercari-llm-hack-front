@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   AreaChart,
   XAxis,
@@ -24,68 +24,6 @@ type ExchangeType = {
   buyerCountry: ExchangeRateData[];
   sellerCountry: ExchangeRateData[];
 }
-
-
-type BuyerCountryType = {
-  buyerCountry: string;
-  saleRate: ExchangeRateData[];
-}
-
-const formatBuyerCountry = [
-  {
-    buyerCountry: "アメリカ",
-    saleRate: [
-      { date: "2024-09-20", rate: 147.65 },
-      { date: "2024-09-21", rate: 147.90 },
-      { date: "2024-09-22", rate: 148.15 },
-      { date: "2024-09-23", rate: 148.05 },
-      { date: "2024-09-24", rate: 148.30 },
-      { date: "2024-09-25", rate: 148.45 },
-      { date: "2024-09-26", rate: 148.55 },
-    ],
-  },
-  {
-    buyerCountry: "日本",
-    saleRate : [
-      { date: "2024-09-20", rate: 145.65 },
-      { date: "2024-09-21", rate: 143.90 },
-      { date: "2024-09-22", rate: 142.15 },
-      { date: "2024-09-23", rate: 144.05 },
-      { date: "2024-09-24", rate: 144.30 },
-      { date: "2024-09-25", rate: 142.45 },
-      { date: "2024-09-26", rate: 141.55 },
-    ],
-  },
-  {
-    buyerCount: "中国",
-    saleRate : [
-      { date: "2024-09-20", rate: 147.65 },
-      { date: "2024-09-21", rate: 147.90 },
-      { date: "2024-09-22", rate: 148.15 },
-      { date: "2024-09-23", rate: 148.05 },
-      { date: "2024-09-24", rate: 147.30 },
-      { date: "2024-09-25", rate: 147.45 },
-      { date: "2024-09-26", rate: 146.55 },
-    ]
-  }
-]
-
-const FormatBuyerCountry = (data: BuyerCountryType[]) => {
-  const formattedData = data.map((item) => {
-    const date = new Date(item.saleRate[0].date);
-    // yyyy/mm/ddの形式に変換する
-    const formattedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-    return {
-      date: formattedDate,
-      rate: item.saleRate[0].rate,
-    };
-  });
-  console.log(formattedData);
-  return formattedData;
-}
-
-
-
 
 const FormatData = (data: ExchangeRateData[]) => {
   const formattedData = data.map((item) => {
@@ -141,9 +79,6 @@ const ExchangeRateChart: React.FC = () => {
       { date: "2024-09-26", rate: 141.55 },
     ],
   }
-  const [exchangeData, setExchangeData] = useState<ExchangeType>(mockData);
-    const [error, setError] = useState<string | null>(null);
-
     // useEffect(() => {
     //     // Fetch the data when the component mounts
     //     const fetchData = async () => {
@@ -157,9 +92,8 @@ const ExchangeRateChart: React.FC = () => {
     //     };
     //     fetchData();
     // }, []); 
-    console.log(exchangeData);
 
-  const FormatMockData = FormatDataBuyerAndSeller(exchangeData);
+  const FormatMockData = FormatDataBuyerAndSeller(mockData);
 
   // nameを変える
   const CustomTooltipFormatter = (value: string, name: string) => {
