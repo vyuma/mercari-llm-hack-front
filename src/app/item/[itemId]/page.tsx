@@ -92,7 +92,7 @@ export default function TitleDetail({}: //   params: { itemId },
           onClick={handleClick}
         ></Image>
       </div>
-      <div className="bg-white p-2 footer-buttons w-full flex flex-row items-center justify-around fixed bottom-16 mb-2">
+      <div className="bg-white p-2 footer-buttons w-full flex flex-row items-center justify-around fixed bottom-16 mb-2 shadow-xl">
         <div className="rounded-md border-red-500 border-2 text-red-500 box-border px-6 py-2">
           定額払いで購入
         </div>
