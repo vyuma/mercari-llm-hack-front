@@ -61,37 +61,24 @@ const FormatDataBuyerAndSeller = (data: ExchangeType) => {
 const ExchangeRateChart: React.FC = () => {
   const mockData ={
     buyerCountry: [
-      { date: "2024-09-20", rate: 147.65 },
-      { date: "2024-09-21", rate: 147.90 },
-      { date: "2024-09-22", rate: 148.15 },
-      { date: "2024-09-23", rate: 148.05 },
-      { date: "2024-09-24", rate: 148.30 },
-      { date: "2024-09-25", rate: 148.45 },
-      { date: "2024-09-26", rate: 148.55 },
+      { date: "2024-09-20", rate: 21407 },
+      { date: "2024-09-21", rate: 27000 },
+      { date: "2024-09-22", rate: 26480 },
+      { date: "2024-09-23", rate: 26000 },
+      { date: "2024-09-24", rate: 28000 },
+      { date: "2024-09-25", rate: 27001 },
+      { date: "2024-09-26", rate: 25000 },
     ],
     sellerCountry: [
-      { date: "2024-09-20", rate: 145.65 },
-      { date: "2024-09-21", rate: 143.90 },
-      { date: "2024-09-22", rate: 142.15 },
-      { date: "2024-09-23", rate: 144.05 },
-      { date: "2024-09-24", rate: 144.30 },
-      { date: "2024-09-25", rate: 142.45 },
-      { date: "2024-09-26", rate: 141.55 },
+      { date: "2024-09-20", rate: 26000 },
+      { date: "2024-09-21", rate: 28000 },
+      { date: "2024-09-22", rate: 27000 },
+      { date: "2024-09-23", rate: 29000 },
+      { date: "2024-09-24", rate: 28000 },
+      { date: "2024-09-25", rate: 26000 },
+      { date: "2024-09-26", rate: 28000 },
     ],
-  }
-    // useEffect(() => {
-    //     // Fetch the data when the component mounts
-    //     const fetchData = async () => {
-    //         try {
-    //             const data = await fetchFX();
-    //             setExchangeData(data);
-    //         } catch (err) {
-    //             setError('Failed to fetch data');
-    //             console.error(err);
-    //         }
-    //     };
-    //     fetchData();
-    // }, []); 
+  };
 
   const FormatMockData = FormatDataBuyerAndSeller(mockData);
 
@@ -117,12 +104,12 @@ const ExchangeRateChart: React.FC = () => {
         >
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+              <stop offset="5%" stopColor="#2ac1ff" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#2ac1ff" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+              <stop offset="5%" stopColor="#0676cd" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#0676cd" stopOpacity={0}/>
             </linearGradient>
           </defs>
           <XAxis dataKey="date" />

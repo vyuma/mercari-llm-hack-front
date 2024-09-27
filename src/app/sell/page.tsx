@@ -80,8 +80,14 @@ export default function Page() {
 
   return (
     <div className="p-1.5 mb-12">
-      <TagSelector tags={tags} setTags={setTags}/>
-      <Header title={"ランキング"} />
+      <div>
+        <Image src="/images/image.png" width={430} height={292} alt="figure" />
+      </div>
+
+      <div className="mb-4 mt-4 ml-4">
+        <Header title={"ランキング"} />
+      </div>
+      <TagSelector tags={tags} setTags={setTags} />
       <div className="m-3">
         <ItemButtons items={searchItem} />
         <Image src="/images/mercari.png" width={500} height={300} alt={'出品画面'} className="" />
