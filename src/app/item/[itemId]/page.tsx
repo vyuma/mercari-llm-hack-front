@@ -39,7 +39,7 @@ export default function TitleDetail({}: //   params: { itemId },
   };
 
   return (
-    <div className="mb-16 pb-4">
+    <div className="mb-16 pb-12">
       <div>
         <Image
           src="/images/item_1.png"
