@@ -20,7 +20,9 @@ const TagSelector = ({tags,setTags}:TagSelectorProps) => {
     setTags(newValue);
   };
   return (
-    <Box>
+    <Box sx={{
+        marginBottom: 2,
+    }}>
       <Autocomplete
         multiple
         freeSolo
